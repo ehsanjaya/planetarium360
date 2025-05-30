@@ -68,8 +68,8 @@ public class ControlPlayer : MonoBehaviour
     {
         if (gameControlMode == "Desktop")
         {
-            horizontal = (Convert.ToInt32(Input.GetKey(rightkeyBindDesktop.keyCode)) - Convert.ToInt32(Input.GetKey(leftKeyBindDesktop.keyCode))) * speed * Time.timeScale;
-            vertical = (Convert.ToInt32(Input.GetKey(forwardKeyBindDesktop.keyCode)) - Convert.ToInt32(Input.GetKey(backwardKeyBindDesktop.keyCode))) * speed * Time.timeScale;
+            horizontal = (Convert.ToInt32(Input.GetKey(rightkeyBindDesktop.keyCode) || Input.GetKey(KeyCode.RightArrow)) - Convert.ToInt32(Input.GetKey(leftKeyBindDesktop.keyCode) || Input.GetKey(KeyCode.LeftArrow))) * speed * Time.timeScale;
+            vertical = (Convert.ToInt32(Input.GetKey(forwardKeyBindDesktop.keyCode) || Input.GetKey(KeyCode.UpArrow)) - Convert.ToInt32(Input.GetKey(backwardKeyBindDesktop.keyCode) || Input.GetKey(KeyCode.DownArrow))) * speed * Time.timeScale;
 
             if (Input.GetKey(resetKeyBindDesktop.keyCode))
             {
